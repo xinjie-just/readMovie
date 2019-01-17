@@ -1,0 +1,33 @@
+.container {
+  background-color: #019fe8;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+}
+
+.head-portraits {
+  display: block;
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 50%;
+  margin-top: 150rpx;
+}
+
+.welcome {
+  margin-top: 100rpx;
+  font-family: "Microsoft Yahei";
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.8;
+}
+
+.to-my-mini-program {
+  margin-top: 150rpx;
+  border: 1px solid #fff;
+  padding: 20rpx 36rpx;
+  border-radius: 15rpx;
+  font-size: 14px;
+  font-weight: 600;
+}

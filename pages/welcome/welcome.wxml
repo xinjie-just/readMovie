@@ -1,0 +1,7 @@
+<view class='container'>
+  <image src='/assets/images/head-portraits.png' class='head-portraits'></image>
+  <text class='welcome'>Hello, <text>welcome to my mini-program</text></text>
+  <view class='to-my-mini-program'>
+    <text>开启小程序之旅吧</text>
+  </view>
+</view>
