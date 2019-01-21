@@ -7,7 +7,7 @@
   color: #fff;
 }
 
-.head-portraits {
+.user-head-portraits {
   display: block;
   width: 200rpx;
   height: 200rpx;

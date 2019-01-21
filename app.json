@@ -1,7 +1,8 @@
 {
   "pages": [
+    "pages/welcome/welcome",
     "pages/read/read",
-    "pages/welcome/welcome"
+    "pages/read/read-details/read-details"
   ],
   "window": {
     "navigationBarBackgroundColor": "#019fe8"

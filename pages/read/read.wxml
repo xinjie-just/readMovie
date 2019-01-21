@@ -1,3 +1,5 @@
+<import src="read-item-template/read-item-template.wxml" />
+
 <view class="container">
   <swiper indicator-dots="true" autoplay="true" interval="5000" indicator-color="#fff"
   indicator-active-color="#019fe8" class="carousel">
@@ -12,63 +14,9 @@
     </swiper-item>
   </swiper>
 
-  <view class="read-item">
-    <view class="head-portraits-date">
-      <image src="/assets/images/head-portraits1.jpg" class="head-portraits"></image>
-      <text class="date">2018-12-24</text>
+  <block wx:for="{{data}}" wx:for-index="readDataIndex" wx:for-item="readDataItem">
+    <view class="read-item-container" catchtap="view" data-readId="{{readDataItem.readId}}">
+      <template is="readItem" data="{{...readDataItem}}" />
     </view>
-    <text class="item-title">2018全球最有意义的马拉松—汶川马拉松</text>
-    <image src="/assets/images/carousel1.jpg" class="item-img"></image>
-    <text class="item-intro">2018汶川马拉松是汶川在地震十年后，向全国乃至全世界交出的重建答卷，更是展示大爱汇聚之地——汶川，这十年来，与马拉松赛跑同样的精神，超越自我的信心，坚韧不拔的意志，永不放弃的坚定信念。</text>
-    <view class="item-info">
-      <view class="item-star">
-        <image src="/assets/icons/star.png"></image>
-        <text>7792</text>
-      </view>
-      <view class="item-msg">
-        <image src="/assets/icons/msg.png"></image>
-        <text>559</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="read-item">
-    <view class="head-portraits-date">
-      <image src="/assets/images/head-portraits2.jpg" class="head-portraits"></image>
-      <text class="date">2018-01-05</text>
-    </view>
-    <text class="item-title">老罗今年第一场发布会终于来了</text>
-    <image src="/assets/images/carousel2.jpg" class="item-img"></image>
-    <text class="item-intro">“我们想跟这个世界聊聊”，这个口号听起来有点意思对吧？这次发布会在水立方举行。一如既往的是，老罗又迟到了。我们顶着屏幕上的子弹LOGO看了半天。接下来将会是发布会的类似图文直播的记录，我们只是信息的搬运工。</text>
-    <view class="item-info">
-      <view class="item-star">
-        <image src="/assets/icons/star.png"></image>
-        <text>92</text>
-      </view>
-      <view class="item-msg">
-        <image src="/assets/icons/msg.png"></image>
-        <text>59</text>
-      </view>
-    </view>
-  </view>
-
-  <view class="read-item">
-    <view class="head-portraits-date">
-      <image src="/assets/images/head-portraits2.jpg" class="head-portraits"></image>
-      <text class="date">2019-01-14</text>
-    </view>
-    <text class="item-title">一家人在一起，什么最重要？</text>
-    <image src="/assets/images/carousel3.jpg" class="item-img"></image>
-    <text class="item-intro">有的人为了生活背井离乡在外打拼，无论多辛苦从来都是跟家人报喜不报忧，我想她内心一定希望多挣些钱回家，让家人可以过得更好。</text>
-    <view class="item-info">
-      <view class="item-star">
-        <image src="/assets/icons/star.png"></image>
-        <text>1192</text>
-      </view>
-      <view class="item-msg">
-        <image src="/assets/icons/msg.png"></image>
-        <text>459</text>
-      </view>
-    </view>
-  </view>
+  </block>
 </view>
