@@ -6,20 +6,63 @@ Page({
    * 页面的初始数据
    */
   data: {
-    
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // console.log(options);
     var id = options.id;
-    // var readData = readData.readData[id];
-    console.log(readData.readData[id]);
     this.setData({
-      data: readData.readData[id]
+      data: readData.readData[id],
+      readId: id
     });
+
+    // var collectList = {0: true, 1: true, 2: false, 3: false};
+    var collectList = wx.getStorageSync("collectList");
+    if (collectList) {
+      var collected = collectList[id];
+      this.setData({
+        collected: collected
+      });
+    }
+    else {
+      collectList = {};
+      collectList[id] = false;
+      wx.setStorageSync("collectList", collectList);
+    }
+  },
+
+  // 收藏
+  onCollect: function(event) {
+    var collectList = wx.getStorageSync("collectList");
+    var collected = collectList[this.data.readId];
+    collected = !collected;
+    collectList[this.data.readId] = collected;
+    wx.setStorageSync("collectList", collectList);
+    this.setData({
+      collected: collected
+    });
+
+    wx.showToast({
+      title: collected ? "收藏成功" : "取消收藏成功",
+      icon: 'success',
+      duration: 2000
+    });
+  },
+
+  // 分享
+  onShare: function(event) {
+    var items = ["分享到朋友圈", "转发给好友", "分享到微博", "分享到QQ"];
+    wx.showActionSheet({
+      itemList: items,
+      success(res) {
+        console.log("用户点击了" + items[res.tapIndex])
+      },
+      fail(res) {
+        console.log(res.errMsg)
+      }
+    })
   },
 
   /**

@@ -12,9 +12,9 @@
         <image src="/assets/icons/star.png"></image>
         <text>{{collection}}</text>
       </view>
-      <view class="item-msg">
-        <image src="/assets/icons/msg.png"></image>
-        <text>{{msg}}</text>
+      <view class="item-share">
+        <image src="/assets/icons/share.png"></image>
+        <text>{{share}}</text>
       </view>
     </view>
   </view>

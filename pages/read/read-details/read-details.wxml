@@ -6,9 +6,10 @@
     <text class="pubtime">发表于<text class="time">{{data.date}}</text></text>
   </view>
   <text class="article-title">{{data.title}}</text>
-  <view class="star-msg">
-    <image src="/assets/icons/star-write.png" class="star"></image>
-    <image src="/assets/icons/msg-write.png" class="msg"></image>
+  <view class="star-share">
+    <image wx:if="{{collected}}" src="/assets/icons/star-write.png" class="star collected" catchtap="onCollect"></image>
+    <image wx:else src="/assets/icons/star.png" class="star not-collected" catchtap="onCollect"></image>
+    <image src="/assets/icons/share-write.png" class="share" catchtap="onShare"></image>
   </view>
   <text class="article-content">{{data.article}}</text>
 </view>
