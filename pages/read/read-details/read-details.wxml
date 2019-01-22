@@ -7,9 +7,9 @@
   </view>
   <text class="article-title">{{data.title}}</text>
   <view class="star-share">
-    <image wx:if="{{collected}}" src="/assets/icons/star-write.png" class="star collected" catchtap="onCollect"></image>
+    <image wx:if="{{collected}}" src="/assets/icons/star-white.png" class="star collected" catchtap="onCollect"></image>
     <image wx:else src="/assets/icons/star.png" class="star not-collected" catchtap="onCollect"></image>
-    <image src="/assets/icons/share-write.png" class="share" catchtap="onShare"></image>
+    <image src="/assets/icons/share-white.png" class="share" catchtap="onShare"></image>
   </view>
   <text class="article-content">{{data.article}}</text>
 </view>

@@ -8,10 +8,13 @@ Page({
   },
 
   startMiniProgram: function(event) {
-    wx.redirectTo({ // 页面重定向到指定页面
+    // wx.redirectTo({ // 页面重定向到指定页面
+    //   url: "/pages/read/read",
+    // })
+
+    wx.switchTab({ // 页面重定向到指定页面
       url: "/pages/read/read",
     })
-    // console.log("你点击了父元素");
   },
 
   /**
