@@ -18,8 +18,15 @@ Page({
     })
   },
 
-  view(value) {
+  view: function(value) {
     var readId = value.currentTarget.dataset.readid;
+    wx.navigateTo({
+      url: "read-details/read-details?id=" + readId,
+    })
+  },
+
+  onSwiperTap: function (value) {
+    var readId = value.target.dataset.readid;
     wx.navigateTo({
       url: "read-details/read-details?id=" + readId,
     })

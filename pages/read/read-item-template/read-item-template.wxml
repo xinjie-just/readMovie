@@ -1,13 +1,15 @@
+<import src="read-item-info-template/read-item-info-template.wxml" />
+
 <template name="readItem">
   <view class="read-item">
     <view class="head-portraits-date">
-      <image src="{{headPortraits}}" class="head-portraits"></image>
-      <text class="date">{{date}}</text>
+      <image src="{{readDataItem.headPortraits}}" class="head-portraits"></image>
+      <text class="date">{{readDataItem.date}}</text>
     </view>
-    <text class="item-title">{{title}}</text>
-    <image src="{{img}}" class="item-img"></image>
-    <text class="item-intro">{{intro}}</text>
-    <view class="item-info">
+    <text class="item-title">{{readDataItem.title}}</text>
+    <image src="{{readDataItem.img}}" class="item-img"></image>
+    <text class="item-intro">{{readDataItem.intro}}</text>
+    <!-- <view class="item-info">
       <view class="item-star">
         <image src="/assets/icons/star.png"></image>
         <text>{{collection}}</text>
@@ -16,6 +18,7 @@
         <image src="/assets/icons/share.png"></image>
         <text>{{share}}</text>
       </view>
-    </view>
+    </view> -->
+    <template is="readItemInfo" data="{{readDataItem}}" />
   </view>
 </template>

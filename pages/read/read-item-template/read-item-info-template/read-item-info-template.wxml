@@ -1,0 +1,12 @@
+<template name="readItemInfo">
+  <view class="item-info">
+    <view class="item-star">
+      <image src="/assets/icons/star.png"></image>
+      <text>{{readDataItem.collectionCount}}</text>
+    </view>
+    <view class="item-read">
+      <image src="/assets/icons/read.png"></image>
+      <text>{{readDataItem.readCount}}</text>
+    </view>
+  </view>
+</template>

@@ -1,3 +1,5 @@
+@import "read-item-info-template/read-item-info-template.wxss";
+
 .read-item {
   font-size: 28rpx;
   padding-top: 1em;
@@ -62,30 +64,4 @@
   margin-bottom: 1em;
   line-height: 1.8;
   color: #666;
-}
-
-.item-info {
-  font-size: inherit;
-  padding-left: 1em;
-  padding-right: 1em;
-  display: flex;
-  align-items: center;
-}
-.item-info view:not(:last-of-type) {
-  margin-right: 1.2em;
-}
-.item-info view {
-  display: flex;
-  align-items: center;
-}
-.item-info view image {
-  display: block;
-  width: 40rpx;
-  height: 40rpx;
-  border-radius: 50%;
-  margin-right: .4em;
-}
-.item-info view text {
-  font-size: inherit;
-  color: #999;
 }

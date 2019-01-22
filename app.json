@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/read/read",
     "pages/welcome/welcome",
+    "pages/read/read",
     "pages/read/read-details/read-details"
   ],
   "window": {
