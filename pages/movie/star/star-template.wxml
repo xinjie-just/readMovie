@@ -1,0 +1,12 @@
+<template name="starTemplate">
+  <view class='stars-container'>
+    <view class='stars'>
+      <image src='/assets/icons/star-score.png'></image>
+      <image src='/assets/icons/star-score.png'></image>
+      <image src='/assets/icons/star-score.png'></image>
+      <image src='/assets/icons/star-score.png'></image>
+      <image src='/assets/icons/star-un-score.png'></image>
+    </view>    
+    <text class='star-score'>{{average}}</text>
+  </view>
+</template>

@@ -1,15 +1,14 @@
 {
   "pages": [
+    "pages/movie/movie",
     "pages/welcome/welcome",
     "pages/read/read",
-    "pages/read/read-details/read-details",
-    "pages/movie/movie"
+    "pages/read/read-details/read-details"
   ],
   "window": {
     "navigationBarBackgroundColor": "#019fe8"
   },
   "tabBar": {
-    "custom": true,
     "color": "#666",
     "selectedColor": "#019fe8",
     "backgroundColor": "#fff",
@@ -28,5 +27,6 @@
         "selectedIconPath": "/assets/icons/tab-movie-active.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

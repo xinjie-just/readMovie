@@ -12,7 +12,7 @@ Page({
     //   url: "/pages/read/read",
     // })
 
-    wx.switchTab({ // 页面重定向到指定页面
+    wx.switchTab({
       url: "/pages/read/read",
     })
   },

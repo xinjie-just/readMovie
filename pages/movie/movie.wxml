@@ -1,2 +1,12 @@
-<!--pages/movie/movie.wxml-->
-<text class="container">电影板块待开发，敬请期待！</text>
+<import src="movie-list/movie-list-template.wxml" />
+<view class="container">
+  <view class="container-template">
+    <template is="movieListTemplate" data="{{...inTheaters}}" />
+  </view>
+  <view class="container-template">
+    <template is="movieListTemplate" data="{{...comingSoon}}" />
+  </view>
+  <view class="container-template">
+    <template is="movieListTemplate" data="{{...top250}}" />
+  </view>
+</view>
