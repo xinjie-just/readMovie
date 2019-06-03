@@ -2,7 +2,7 @@
 <template name="movieListTemplate">
   <view class="movie-list-container">
     <view class="movie-head">
-      <text class="slogan">最新上映</text>
+      <text class="slogan">{{categoryTitle}}</text>
       <text class="more">更多 ></text>
     </view>
     <view class="movie-body">
