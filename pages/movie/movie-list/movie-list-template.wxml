@@ -3,7 +3,7 @@
   <view class="movie-list-container">
     <view class="movie-head">
       <text class="slogan">{{categoryTitle}}</text>
-      <text class="more">更多 ></text>
+      <text class="more" catchtap='onMoreTap' data-category='{{categoryTitle}}'>更多 ></text>
     </view>
     <view class="movie-body">
       <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie">
