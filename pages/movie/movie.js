@@ -1,4 +1,5 @@
 // pages/movie/movie.js
+var stars = require("../../utils/util.js");
 var AppData = getApp();  // 获取小程序App实例
 Page({
 
@@ -40,10 +41,14 @@ Page({
   processMoviewData(data, setTitle) {
     var movies = [], movieItem = {};
     for (var prop in data.subjects) {
-      movieItem.id = data.subjects[prop].id;
-      movieItem.title = data.subjects[prop].title;
-      movieItem.images = data.subjects[prop].images.large;
-      movieItem.average = data.subjects[prop].rating.average;
+      var subject = data.subjects[prop];
+      movieItem = {
+        id: subject.id,
+        title: subject.title,
+        images: subject.images.large,
+        average: subject.rating.average,
+        stars: stars.convertToStarArray(subject.rating.stars)
+      }
       movies.push(movieItem);
       movieItem = {};
     }

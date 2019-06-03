@@ -8,9 +8,7 @@
     <view class="movie-body">
       <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie">
         <template is="movieItemTemplate" data="{{...movie}}" />
-      </block>      
-      <!-- <template is="movieItemTemplate" />
-      <template is="movieItemTemplate" /> -->
+      </block>
     </view>
   </view>
 </template>
