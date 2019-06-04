@@ -14,7 +14,7 @@
 		"uglifyFileName": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.4.0",
+	"libVersion": "2.7.1",
 	"appid": "wxb98d484ddec8507e",
 	"projectname": "readMovie",
 	"debugOptions": {

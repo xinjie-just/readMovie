@@ -1,68 +1,89 @@
 // pages/movie/more-movie/more-movie.js
+var stars = require("../../../utils/util.js");
+var AppData = getApp();
 Page({
 
-  /**
-   * 页面的初始数据
-   */
   data: {
-
+    movies: [],
+    baseUrl: AppData.globalData.doubanbase,  // 豆瓣基础地址
+    categoryUrl: "",  // 电影类型加载数据的 url
+    nextIndex: 0,  // 第一次取数据的开始索引
+    isFirstLoading: true  // 是首次加载
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  onScroll(event) {
+    console.log("加载更多");
+    var nextUrl = this.data.categoryUrl + "?start=" + this.data.nextIndex + "&count=20";
+    this.getMovieListRequest(nextUrl);
+  },
+
+  onLoad: function(options) {
     console.log(options.category);
     wx.setNavigationBarTitle({
       title: options.category
+    });
+    console.log(this.data.baseUrl);
+
+    switch (options.category) {
+      case "正在热映":
+        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/in_theaters";
+        break;
+      case "即将上映":
+        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/coming_soon";
+        break;
+      case "豆瓣Top250":
+        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/top250";
+        break;
+    }
+
+    this.getMovieListRequest(this.data.categoryUrl);
+  },
+
+  getMovieListRequest(url) {
+    var that = this;
+    wx.request({
+      url: url,
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: "GET",
+      success: function(res) {
+        that.processMoviewData(res.data);
+      },
+      fail: function(error) {}
     })
   },
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
+  processMoviewData(data) {
+    var movies = [],
+      movieItem = {};
+    for (var prop in data.subjects) {
+      var subject = data.subjects[prop];
+      movieItem = {
+        id: subject.id,
+        title: subject.title,
+        images: subject.images.large,
+        average: subject.rating.average,
+        stars: stars.convertToStarArray(subject.rating.stars)
+      }
+      movies.push(movieItem);
+      movieItem = {};
+    }
+    var totalMovie = [];
+    if (this.data.isFirstLoading) {
+      totalMovie = movies;
+      this.data.isFirstLoading = false;
+    } else {
+      totalMovie = this.data.movies.concat(movies);
+    }
+
+    this.setData({
+      movies: totalMovie
+    });
+    console.log(movies);
+    this.data.nextIndex += 20;
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
+  onReady: function() {}
 
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
-  }
 })
