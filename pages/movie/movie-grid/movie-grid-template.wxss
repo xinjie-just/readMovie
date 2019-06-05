@@ -1,7 +1,7 @@
 @import "../movie-item/movie-item-template.wxss";
 
 .movie-body {
-  padding: 30rpx 15rpx;
+  padding: 30rpx 0;
   height: 1300rpx; /*给scroll-view一个固定高度*/
 }
 .movie-body::before {

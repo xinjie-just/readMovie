@@ -15,6 +15,7 @@ Page({
     console.log("加载更多");
     var nextUrl = this.data.categoryUrl + "?start=" + this.data.nextIndex + "&count=20";
     this.getMovieListRequest(nextUrl);
+    wx.showNavigationBarLoading();
   },
 
   onLoad: function(options) {
@@ -82,6 +83,8 @@ Page({
     });
     console.log(movies);
     this.data.nextIndex += 20;
+
+    wx.hideNavigationBarLoading();
   },
 
   onReady: function() {}
