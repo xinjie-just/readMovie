@@ -12,9 +12,16 @@ Page({
   },
 
   onScroll(event) {
-    console.log("加载更多");
     var nextUrl = this.data.categoryUrl + "?start=" + this.data.nextIndex + "&count=20";
     this.getMovieListRequest(nextUrl);
+    wx.showNavigationBarLoading();
+  },
+
+  onPullDownRefresh(event) {
+    var refreshUrl = this.data.categoryUrl + "?start=0&count=20";
+    this.getMovieListRequest(refreshUrl);
+    this.data.movies = [];
+    this.data.isFirstLoading = true;
     wx.showNavigationBarLoading();
   },
 
@@ -85,6 +92,7 @@ Page({
     this.data.nextIndex += 20;
 
     wx.hideNavigationBarLoading();
+    wx.stopPullDownRefresh();
   },
 
   onReady: function() {}
