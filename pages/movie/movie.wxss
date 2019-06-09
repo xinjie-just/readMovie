@@ -16,9 +16,10 @@
 }
 .search-container input {
   flex: 1;
+  color: #a9a9a9;
 }
 .search-container .placeholder-style {
-  color: #999;
+  color: #a9a9a9;
 }
 .search-container icon {
   display: block;

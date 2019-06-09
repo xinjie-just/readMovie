@@ -4,18 +4,20 @@ var AppData = getApp(); // 获取小程序App实例
 Page({
 
   data: {
+    baseUrl: AppData.globalData.doubanbase,
     inTheaters: {},
     comingSoon: {},
     top250: {},
+    searchResult: {},
     isShowSearchPage: false
   },
 
   onLoad: function(options) {
-    var inTheatersUrl = AppData.globalData.doubanbase +
+    var inTheatersUrl = this.data.baseUrl +
       "/v2/movie/in_theaters" + "?start=0&count=3";
-    var comingSoonUrl = AppData.globalData.doubanbase +
+    var comingSoonUrl = this.data.baseUrl +
       "/v2/movie/coming_soon" + "?start=0&count=3";
-    var top250Url = AppData.globalData.doubanbase +
+    var top250Url = this.data.baseUrl +
       "/v2/movie/top250" + "?start=0&count=3";
 
     this.getMovieListRequest(inTheatersUrl, "inTheaters", "正在热映");
@@ -69,7 +71,6 @@ Page({
   },
 
   focusHandle(event) {
-    console.log("我获得了焦点");
     this.setData({
       isShowSearchPage: true
     });
@@ -79,5 +80,12 @@ Page({
     this.setData({
       isShowSearchPage: false
     });
+  },
+
+  searchComplete(event) {
+    console.log(event.detail.value);
+    var searchContent = event.detail.value;
+    var searchUrl = this.data.baseUrl + '/v2/movie/search?q=' + searchContent;
+    this.getMovieListRequest(searchUrl, "searchResult", "");
   }
 })
