@@ -1,9 +1,9 @@
 <import src="../movie-item/movie-item-template.wxml" />
-  <template name="movieGridTemplate">
-    <scroll-view class="movie-body"
-    scroll-y="true" bindscrolltolower="onScroll">
-      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie">
-        <template is="movieItemTemplate" data="{{...movie}}" />
-      </block>
-    </scroll-view>
-  </template>
+<template name="movieGridTemplate">
+  <text>搜索页显示了</text>
+  <scroll-view class="movie-body" scroll-y="true" bindscrolltolower="onScroll">
+    <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie">
+      <template is="movieItemTemplate" data="{{...movie}}" />
+    </block>
+  </scroll-view>
+</template>

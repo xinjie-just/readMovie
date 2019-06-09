@@ -1,17 +1,18 @@
 // pages/movie/movie.js
 var stars = require("../../utils/util.js");
-var AppData = getApp();  // 获取小程序App实例
+var AppData = getApp(); // 获取小程序App实例
 Page({
 
   data: {
     inTheaters: {},
     comingSoon: {},
-    top250: {}
+    top250: {},
+    isShowSearchPage: false
   },
 
-  onLoad: function (options) {
+  onLoad: function(options) {
     var inTheatersUrl = AppData.globalData.doubanbase +
-    "/v2/movie/in_theaters" + "?start=0&count=3";
+      "/v2/movie/in_theaters" + "?start=0&count=3";
     var comingSoonUrl = AppData.globalData.doubanbase +
       "/v2/movie/coming_soon" + "?start=0&count=3";
     var top250Url = AppData.globalData.doubanbase +
@@ -30,16 +31,16 @@ Page({
         "Content-Type": "application/json"
       },
       method: "GET",
-      success: function (res) {
+      success: function(res) {
         that.processMoviewData(res.data, setTitle, categoryTitle);
       },
-      fail: function (error) {
-      }
+      fail: function(error) {}
     })
   },
 
   processMoviewData(data, setTitle, categoryTitle) {
-    var movies = [], movieItem = {};
+    var movies = [],
+      movieItem = {};
     for (var prop in data.subjects) {
       var subject = data.subjects[prop];
       movieItem = {
@@ -64,6 +65,19 @@ Page({
     var category = event.currentTarget.dataset.category;
     wx.navigateTo({
       url: 'more-movie/more-movie?category=' + category
+    });
+  },
+
+  focusHandle(event) {
+    console.log("我获得了焦点");
+    this.setData({
+      isShowSearchPage: true
+    });
+  },
+
+  cancelSearchPage(event) {
+    this.setData({
+      isShowSearchPage: false
     });
   }
 })

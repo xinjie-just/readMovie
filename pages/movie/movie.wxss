@@ -6,3 +6,25 @@
 .container-template:not(:last-of-type) {
   margin-bottom: 30rpx;
 }
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 46px;
+  font-size: 16px;
+  background-color: #efefef;
+}
+.search-container input {
+  flex: 1;
+}
+.search-container .placeholder-style {
+  color: #999;
+}
+.search-container icon {
+  display: block;
+  width: 46px;
+  height: 46px;
+  line-height: 46px;
+  text-align: center;
+  font-size: 32px;
+}
