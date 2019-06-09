@@ -87,5 +87,12 @@ Page({
     var searchContent = event.detail.value;
     var searchUrl = this.data.baseUrl + '/v2/movie/search?q=' + searchContent;
     this.getMovieListRequest(searchUrl, "searchResult", "");
+  },
+
+  movieDetail(event) {
+    var id = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: 'movie-details/movie-details?id=' + id,
+    })
   }
 })
