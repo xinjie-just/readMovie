@@ -95,6 +95,13 @@ Page({
     wx.stopPullDownRefresh();
   },
 
+  movieDetail(event) {
+    var id = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../movie-details/movie-details?id=' + id,
+    })
+  },
+
   onReady: function() {}
 
 })

@@ -7,6 +7,36 @@ function convertToStarArray(stars) {
   return starsArr;
 }
 
+function directorsToString(directors) {
+  if (directors.length) {
+    var directorsArr = [];
+    for (var prop in directors) {
+      directorsArr.push(directors[prop].name);
+    }
+  }
+  return directorsArr.join(" / ");
+}
+
+function castsToString(casts) {
+  if (casts.length) {
+    var castsArr = [{
+      avatars: "",
+      name: ""
+    }];
+    for (var prop in casts) {
+      castsArr.push(casts[prop]);
+    }
+    // var castsNames = [], castsAvatars = [];
+    // for (var prop in casts) {
+    //   castsNames.push(casts[prop].name);
+    //   castsAvatars.push(casts[prop].avatars.large);
+    // }
+  }
+  return casts;
+}
+
 module.exports = {
-  convertToStarArray: convertToStarArray
+  convertToStarArray: convertToStarArray,
+  directorsToString: directorsToString,
+  castsToString: castsToString
 }

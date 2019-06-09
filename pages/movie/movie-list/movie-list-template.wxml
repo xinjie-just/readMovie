@@ -6,7 +6,7 @@
       <text class="more" catchtap='onMoreTap' data-category='{{categoryTitle}}'>更多 ></text>
     </view>
     <view class="movie-body">
-      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie">
+      <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie" wx:key="id">
         <template is="movieItemTemplate" data="{{...movie}}" />
       </block>
     </view>

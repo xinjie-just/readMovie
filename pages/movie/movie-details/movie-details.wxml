@@ -1,2 +1,64 @@
-<!--pages/movie/movie-details/movie-details.wxml-->
-<text>pages/movie/movie-details/movie-details.wxml</text>
+<import src='../star/star-template.wxml' />
+
+<view class="container">
+  <image class="head-img" src="{{movie.images}}" mode="aspectFill" />
+  <view class="head-img-hover" data-src="{{movie.images}}" catchtap="viewMoviePostImg">
+    <text class="main-title">{{movie.title}}</text>
+    <text class="sub-title">{{movie.countries + " · " + movie.date}}</text>
+    <view class="like">
+      <text class="highlight-font">
+        {{movie.wishCount}}
+      </text>
+      <text class="plain-font">
+        人喜欢
+      </text>
+      <text class="highlight-font">
+        {{movie.reviewsCount}}
+      </text>
+      <text class="plain-font">
+        条评论
+      </text>
+    </view>
+  </view>
+  <image class="movie-img" src="{{movie.images}}" data-src="{{movie.images}}" catchtap="viewMoviePostImg" />
+  <view class="summary">
+    <view class="original-title">
+      <text>{{movie.originalTitle}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">评分</text>
+      <template is="starTemplate" data="{{stars: movie.stars, score: movie.score}}" />
+    </view>
+    <view class="flex-row">
+      <text class="mark">导演</text>
+      <text>{{movie.directors}}</text>
+    </view>
+    <view class="flex-row">
+      <text class="mark">影人</text>
+      <block wx:for='{{movie.casts}}' wx:for-item="cast">
+        <text>{{cast.name + " / "}}</text>
+      </block>
+    </view>
+    <view class="flex-row">
+      <text class="mark">类型</text>
+      <text>{{movie.genres}}</text>
+    </view>
+  </view>
+  <view class="hr"></view>
+  <view class="synopsis">
+    <text class="synopsis-font">剧情简介</text>
+    <text class="summary-content">{{movie.summary}}</text>
+  </view>
+  <view class="hr"></view>
+  <view class="cast">
+    <text class="cast-font"> 影人</text>
+    <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
+      <block wx:for="{{movie.casts}}" wx:for-item="cast">
+        <view class="cast-container">
+          <image class="cast-img" src="{{cast.avatars.large}}"></image>
+          <text class="cast-name">{{cast.name}}</text>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>
