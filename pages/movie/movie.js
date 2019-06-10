@@ -83,7 +83,6 @@ Page({
   },
 
   searchComplete(event) {
-    console.log(event.detail.value);
     var searchContent = event.detail.value;
     var searchUrl = this.data.baseUrl + '/v2/movie/search?q=' + searchContent;
     this.getMovieListRequest(searchUrl, "searchResult", "");

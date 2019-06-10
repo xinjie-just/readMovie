@@ -26,11 +26,9 @@ Page({
   },
 
   onLoad: function(options) {
-    console.log(options.category);
     wx.setNavigationBarTitle({
       title: options.category
     });
-    console.log(this.data.baseUrl);
 
     switch (options.category) {
       case "正在热映":

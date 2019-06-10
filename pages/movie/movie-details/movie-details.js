@@ -7,7 +7,7 @@ Page({
     baseUrl: app.globalData.doubanbase
   },
 
-  onLoad: function(options) {
+  onLoad: function (options) {
     var movieId = options.id;
     var movieDetailsUrl = this.data.baseUrl + "/v2/movie/subject/" + movieId;
     this.getMovieDetailsRequest(movieDetailsUrl);
@@ -22,7 +22,6 @@ Page({
       },
       method: "GET",
       success: function (res) {
-        console.log(res.data);
         that.resetDetailsData(res.data);
       },
       fail: function (error) { }
@@ -61,5 +60,11 @@ Page({
       urls: [src] // 需要预览的图片http链接列表
     })
   },
+
+  onReady: function (options) {
+    wx.setNavigationBarTitle({
+      title: this.data.movie.title || "电影详情"
+    });
+  }
 
 })

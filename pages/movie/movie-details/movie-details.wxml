@@ -2,56 +2,48 @@
 
 <view class="container">
   <image class="head-img" src="{{movie.images}}" mode="aspectFill" />
-  <view class="head-img-hover" data-src="{{movie.images}}" catchtap="viewMoviePostImg">
-    <text class="main-title">{{movie.title}}</text>
-    <text class="sub-title">{{movie.countries + " · " + movie.date}}</text>
-    <view class="like">
-      <text class="highlight-font">
-        {{movie.wishCount}}
+  <view class="head-img-container" data-src="{{movie.images}}" catchtap="viewMoviePostImg">
+    <view class="main-title">{{movie.title}}</view>
+    <view class="sub-title">{{movie.countries + " · " + movie.date}}</view>
+    <view class="audience-response">
+      <text class='wish'>
+        <text class='count wish-count'>{{movie.wishCount}}</text>人喜欢
       </text>
-      <text class="plain-font">
-        人喜欢
-      </text>
-      <text class="highlight-font">
-        {{movie.reviewsCount}}
-      </text>
-      <text class="plain-font">
-        条评论
+      <text class='reviews'>
+        <text class='count reviews-count'>{{movie.reviewsCount}}</text>条评论
       </text>
     </view>
+    <image class="movie-img" src="{{movie.images}}" data-src="{{movie.images}}" catchtap="viewMoviePostImg" />
   </view>
-  <image class="movie-img" src="{{movie.images}}" data-src="{{movie.images}}" catchtap="viewMoviePostImg" />
   <view class="summary">
-    <view class="original-title">
-      <text>{{movie.originalTitle}}</text>
-    </view>
-    <view class="flex-row">
+    <view class="original-title">{{movie.originalTitle}}</view>
+    <view class="summary-item">
       <text class="mark">评分</text>
       <template is="starTemplate" data="{{stars: movie.stars, score: movie.score}}" />
     </view>
-    <view class="flex-row">
+    <view class="summary-item">
       <text class="mark">导演</text>
-      <text>{{movie.directors}}</text>
+      <text class='contnet'>{{movie.directors}}</text>
     </view>
-    <view class="flex-row">
+    <view class="summary-item">
       <text class="mark">影人</text>
-      <block wx:for='{{movie.casts}}' wx:for-item="cast">
-        <text>{{cast.name + " / "}}</text>
-      </block>
+      <view class='contnet'>
+        <block wx:for='{{movie.casts}}' wx:for-item="cast">
+          <text class='summary-cast-name'>{{cast.name}}</text>
+        </block>
+      </view>
     </view>
-    <view class="flex-row">
+    <view class="summary-item">
       <text class="mark">类型</text>
-      <text>{{movie.genres}}</text>
+      <text class='contnet'>{{movie.genres}}</text>
     </view>
   </view>
-  <view class="hr"></view>
   <view class="synopsis">
-    <text class="synopsis-font">剧情简介</text>
-    <text class="summary-content">{{movie.summary}}</text>
+    <view class="synopsis-heading">剧情简介</view>
+    <view class="summary-content">{{movie.summary}}</view>
   </view>
-  <view class="hr"></view>
   <view class="cast">
-    <text class="cast-font"> 影人</text>
+    <view class="cast-heading">影人</view>
     <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
       <block wx:for="{{movie.casts}}" wx:for-item="cast">
         <view class="cast-container">
