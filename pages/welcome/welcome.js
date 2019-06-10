@@ -4,7 +4,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   startMiniProgram: function(event) {
@@ -22,6 +22,18 @@ Page({
    */
   onLoad: function(options) {
     // console.log("welcome onLoad");
+    
+    wx.getUserInfo({
+      success: function (res) {
+        var userInfo = res.userInfo
+        var nickName = userInfo.nickName
+        var avatarUrl = userInfo.avatarUrl
+        var gender = userInfo.gender //性别 0：未知、1：男、2：女
+        var province = userInfo.province
+        var city = userInfo.city
+        var country = userInfo.country
+      }
+    })
   },
 
   /**

@@ -19,6 +19,7 @@
   left: 0;
   padding: 50rpx 225rpx 0 40rpx;
   box-sizing: border-box;
+  background-color:rgba(128,128,128,.4);
 }
 
 .main-title {

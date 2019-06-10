@@ -13,6 +13,11 @@
   height: 200rpx;
   border-radius: 50%;
   margin-top: 150rpx;
+  margin-bottom: 30rpx;
+}
+
+.user-nick-name {
+  margin-bottom: 30rpx;
 }
 
 .welcome {
@@ -21,6 +26,16 @@
   font-size: 14px;
   font-weight: 600;
   line-height: 1.8;
+}
+
+#impower-btn {
+  margin-top: 50rpx;
+  border: 1px solid #fff;
+  background-color: transparent;
+  padding: 20rpx 36rpx;
+  border-radius: 15rpx;
+  font-size: 14px;
+  font-weight: 600;
 }
 
 .to-my-mini-program {
