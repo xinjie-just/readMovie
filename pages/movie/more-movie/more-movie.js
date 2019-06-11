@@ -1,4 +1,3 @@
-// pages/movie/more-movie/more-movie.js
 var stars = require("../../../utils/util.js");
 var AppData = getApp();
 Page({
@@ -17,14 +16,6 @@ Page({
     wx.showNavigationBarLoading();
   },
 
-  onPullDownRefresh(event) {
-    var refreshUrl = this.data.categoryUrl + "?start=0&count=20";
-    this.getMovieListRequest(refreshUrl);
-    this.data.movies = [];
-    this.data.isFirstLoading = true;
-    wx.showNavigationBarLoading();
-  },
-
   onLoad: function(options) {
     wx.setNavigationBarTitle({
       title: options.category
@@ -32,13 +23,19 @@ Page({
 
     switch (options.category) {
       case "正在热映":
-        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/in_theaters";
+        this.setData({
+          categoryUrl: this.data.baseUrl + "/v2/movie/in_theaters"
+        });
         break;
       case "即将上映":
-        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/coming_soon";
+        this.setData({
+          categoryUrl: this.data.baseUrl + "/v2/movie/coming_soon"
+        });
         break;
       case "豆瓣Top250":
-        this.data.categoryUrl = this.data.baseUrl + "/v2/movie/top250";
+        this.setData({
+          categoryUrl: this.data.baseUrl + "/v2/movie/top250"
+        });
         break;
     }
 
@@ -86,7 +83,6 @@ Page({
     this.setData({
       movies: totalMovie
     });
-    console.log(movies);
     this.data.nextIndex += 20;
 
     wx.hideNavigationBarLoading();
@@ -100,6 +96,12 @@ Page({
     })
   },
 
-  onReady: function() {}
+  onPullDownRefresh: function () {
+    var refreshUrl = this.data.categoryUrl + "?start=0&count=20";
+    this.getMovieListRequest(refreshUrl);
+    this.data.movies = [];
+    this.data.isFirstLoading = true;
+    wx.showNavigationBarLoading();
+  },
 
 })

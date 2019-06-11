@@ -9,16 +9,6 @@
     <text class="item-title">{{readDataItem.title}}</text>
     <image src="{{readDataItem.img}}" class="item-img"></image>
     <text class="item-intro">{{readDataItem.intro}}</text>
-    <!-- <view class="item-info">
-      <view class="item-star">
-        <image src="/assets/icons/star.png"></image>
-        <text>{{collection}}</text>
-      </view>
-      <view class="item-share">
-        <image src="/assets/icons/share.png"></image>
-        <text>{{share}}</text>
-      </view>
-    </view> -->
     <template is="readItemInfo" data="{{readDataItem}}" />
   </view>
 </template>

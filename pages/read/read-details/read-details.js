@@ -6,6 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    title: ""
   },
 
   /**
@@ -15,7 +16,8 @@ Page({
     var id = options.id;
     this.setData({
       data: readData.readData[id],
-      readId: id
+      readId: id,
+      title: readData.readData[options.id].title
     });
 
     // var collectList = {0: true, 1: true, 2: false, 3: false};
@@ -69,7 +71,9 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    wx.setNavigationBarTitle({
+      title: this.data.title || "文章详情",
+    })    
   },
 
   /**

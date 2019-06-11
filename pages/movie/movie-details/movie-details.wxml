@@ -28,7 +28,7 @@
     <view class="summary-item">
       <text class="mark">影人</text>
       <view class='contnet'>
-        <block wx:for='{{movie.casts}}' wx:for-item="cast">
+        <block wx:for='{{movie.casts}}' wx:for-item="cast" wx:key="cast.name">
           <text class='summary-cast-name'>{{cast.name}}</text>
         </block>
       </view>
@@ -45,7 +45,7 @@
   <view class="cast">
     <view class="cast-heading">影人</view>
     <scroll-view class="cast-imgs" scroll-x="true" style="width:100%">
-      <block wx:for="{{movie.casts}}" wx:for-item="cast">
+      <block wx:for="{{movie.casts}}" wx:for-item="cast" wx:key="cast.name">
         <view class="cast-container">
           <image class="cast-img" src="{{cast.avatars.large}}"></image>
           <text class="cast-name">{{cast.name}}</text>

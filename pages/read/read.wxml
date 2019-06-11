@@ -1,8 +1,7 @@
 <import src="read-item-template/read-item-template.wxml" />
 
 <view class="container">
-  <swiper indicator-dots="true" autoplay="true" interval="5000" indicator-color="#fff"
-  indicator-active-color="#019fe8" class="carousel" catchtap="onSwiperTap">
+  <swiper indicator-dots="true" autoplay="true" interval="5000" indicator-color="#fff" indicator-active-color="#019fe8" class="carousel" catchtap="onSwiperTap">
     <swiper-item>
       <image src="/assets/images/carousel1.jpg" data-readId="0"></image>
     </swiper-item>
@@ -13,12 +12,8 @@
       <image src="/assets/images/carousel3.jpg" data-readId="2"></image>
     </swiper-item>
   </swiper>
-
-  <!-- <block wx:for="{{data}}" wx:for-index="readDataIndex" wx:for-item="readDataItem"> -->
-    <view class="read-item-container" catchtap="view" data-readId="{{readDataItem.readId}}"
-     wx:for="{{data}}" wx:for-index="readDataIndex" wx:for-item="readDataItem">
-      <!-- <template is="readItem" data="{{...readDataItem}}" /> -->
-      <template is="readItem" data="{{readDataItem}}" />
-    </view>
-  <!-- </block> -->
+    
+  <view class="read-item-container" catchtap="view" data-readId="{{readDataItem.readId}}" wx:for="{{data}}" wx:for-index="readDataIndex" wx:for-item="readDataItem" wx:key="readDataItem.readId">
+    <template is="readItem" data="{{readDataItem}}" />
+  </view>
 </view>
