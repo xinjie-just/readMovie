@@ -10,7 +10,7 @@ Page({
     isFirstLoading: true  // 是首次加载
   },
 
-  onScroll(event) {
+  onReachBottom(event) {
     var nextUrl = this.data.categoryUrl + "?start=" + this.data.nextIndex + "&count=20";
     this.getMovieListRequest(nextUrl);
     wx.showNavigationBarLoading();

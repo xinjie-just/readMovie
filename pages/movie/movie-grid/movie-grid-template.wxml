@@ -1,8 +1,8 @@
 <import src="../movie-item/movie-item-template.wxml" />
 <template name="movieGridTemplate">
-  <scroll-view class="movie-body" scroll-y bindscrolltolower="onScroll">
+  <view class="movie-body">
     <block wx:for="{{movies}}" wx:for-index="index" wx:for-item="movie" wx:key="movie.id">
       <template is="movieItemTemplate" data="{{...movie}}" />
     </block>
-  </scroll-view>
+  </view>
 </template>
