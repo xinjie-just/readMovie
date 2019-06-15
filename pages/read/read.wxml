@@ -3,13 +3,13 @@
 <view class="container">
   <swiper indicator-dots="true" autoplay="true" interval="5000" indicator-color="#fff" indicator-active-color="#019fe8" class="carousel" catchtap="onSwiperTap">
     <swiper-item>
-      <image src="/assets/images/carousel1.jpg" data-readId="0"></image>
+      <image src="/assets/images/carousel1.jpg" mode="aspectFill" data-readId="0"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/assets/images/carousel2.jpg" data-readId="1"></image>
+      <image src="/assets/images/carousel2.jpg" mode="aspectFill" data-readId="1"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/assets/images/carousel3.jpg" data-readId="2"></image>
+      <image src="/assets/images/carousel3.jpg" mode="aspectFill" data-readId="2"></image>
     </swiper-item>
   </swiper>
     

@@ -7,7 +7,7 @@
       <text class="date">{{readDataItem.date}}</text>
     </view>
     <text class="item-title">{{readDataItem.title}}</text>
-    <image src="{{readDataItem.img}}" class="item-img"></image>
+    <image src="{{readDataItem.img}}" class="item-img" mode="aspectFill"></image>
     <text class="item-intro">{{readDataItem.intro}}</text>
     <template is="readItemInfo" data="{{readDataItem}}" />
   </view>

@@ -3,13 +3,24 @@
   padding-left: 2%;
   padding-bottom: 20rpx;
 }
-
-.big-img {
+.image-container {
+  position: relative;
+  margin-right: -2%;
+  margin-left: -2%;
+}
+.image-container .big-img {
   display: block;
   width: 750rpx;
   height: 400rpx;
-  margin-left: -2%;
-  margin-right: -2%;
+}
+.image-container .music-icon {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100rpx;
+  height: 100rpx;
 }
 .article-heading {
   font-size: 28rpx;
@@ -73,8 +84,8 @@
   transform: translateY(-50%);
   z-index: 3;
   font-size: inherit;
-  width: 1.5em;
-  height: 1.5em;
+  width: 1.8em;
+  height: 1.8em;
   border-radius: 50%;
   box-sizing: border-box;
   color: #fff;
