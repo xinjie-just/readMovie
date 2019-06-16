@@ -11,7 +11,7 @@ var readData = [
     nickName: "小张",
     article: "曾有人说过，要想认识一座城市，跑步是最好的方式。要想快速走进城市的生活，马拉松无疑是最佳的途径。\n 2018汶川马拉松是汶川在地震十年后，向全国乃至全世界交出的重建答卷，更是展示大爱汇聚之地——汶川，这十年来，与马拉松赛跑同样的精神，超越自我的信心，坚韧不拔的意志，永不放弃的坚定信念。\n 2018汶川马拉松5月13日圆满收官，赛事以“生命的赞歌——感恩奋进 康养汶川”为主题，6000名跑者一起用脚步丈量新汶川，途中1.5公里的默语赛道供跑友追思缅怀，成为一大亮点。\n 灾后十年，是汶川振兴的十年，如同一场漫长而坚毅的马拉松历程。即便不知道完美的终点还相距多远，只要奋力奔跑，前路将掌声长鸣。全世界各地的跑友借此机会齐聚汶川，用脚步丈量汶川，和汶川一起奔向世界。",
     music: {
-      src: "http://isure.stream.qqmusic.qq.com/C4000046NhnE3I6glK.m4a?guid=7949948390&vkey=BE7F7513D4A43A149064F5062C74A86E3F3EFBEBE76820E82BF1F9322019C2347248050BEB951C9CE1B03167AAB75F4D6FBC9D1E53271440&uin=1957&fromtag=66",
+      src: "http://125.74.6.21/amobile.music.tc.qq.com/C4000046NhnE3I6glK.m4a?guid=7949948390&amp;vkey=6BE45AF75B904A810FEAEB0347F8D82A7E8F9746E3FDEB8DC24E0C63732FD33CFB57709F14E3E522095B23C90016BC7FCC51232DD3A374B1&amp;uin=1957&amp;fromtag=66",
       title: "往后余生(马良 / 孙茜茹)",
       coverImg: "https://y.gtimg.cn/music/photo_new/T002R300x300M000001xXVYZ3D3baj.jpg?max_age=2592000"
     }

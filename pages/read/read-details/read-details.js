@@ -1,18 +1,11 @@
 var readData = require("../../../data/read-data.js");
 
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     title: "",
     isPlaying: false
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
   onLoad: function(options) {
     var id = options.id;
     console.log(readData.readData[id]);
@@ -22,7 +15,6 @@ Page({
       title: readData.readData[options.id].title
     });
 
-    // var collectList = {0: true, 1: true, 2: false, 3: false};
     var collectList = wx.getStorageSync("collectList");
     if (collectList) {
       var collected = collectList[id];
@@ -119,7 +111,6 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
   },
 
   /**

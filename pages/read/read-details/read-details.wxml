@@ -1,8 +1,7 @@
 <view class="read-details-container">
   <view class="image-container">
     <image src="{{isPlaying ? data.music.coverImg : data.img}}" class="big-img" mode="aspectFill"></image>
-    <image src="{{isPlaying ? '/assets/icons/music-pause.png' : '/assets/icons/music-play.png'}}"
-    alt="音乐" class="music-icon" catchtap="onBackgroundAudio"></image>
+    <image src="{{isPlaying ? '/assets/icons/music-pause.png' : '/assets/icons/music-play.png'}}" alt="音乐" class="music-icon" catchtap="onBackgroundAudio"></image>
   </view>
   <view class="article-heading">
     <image src="{{data.headPortraits}}" class="head-portraits"></image>

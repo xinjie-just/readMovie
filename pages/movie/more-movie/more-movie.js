@@ -1,7 +1,6 @@
 var stars = require("../../../utils/util.js");
 var AppData = getApp();
 Page({
-
   data: {
     movies: [],
     baseUrl: AppData.globalData.doubanbase,  // 豆瓣基础地址
@@ -102,6 +101,6 @@ Page({
     this.data.movies = [];
     this.data.isFirstLoading = true;
     wx.showNavigationBarLoading();
-  },
+  }
 
 })

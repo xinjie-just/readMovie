@@ -12,7 +12,7 @@
       <image src="/assets/images/carousel3.jpg" mode="aspectFill" data-readId="2"></image>
     </swiper-item>
   </swiper>
-    
+
   <view class="read-item-container" catchtap="view" data-readId="{{readDataItem.readId}}" wx:for="{{data}}" wx:for-index="readDataIndex" wx:for-item="readDataItem" wx:key="readDataItem.readId">
     <template is="readItem" data="{{readDataItem}}" />
   </view>

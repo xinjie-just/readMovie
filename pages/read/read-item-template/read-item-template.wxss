@@ -7,9 +7,11 @@
   background-color: #fff;
   box-shadow: 0 0 6rpx #cdcdcd;
 }
+
 .read-item:first-of-type {
   margin-top: 30rpx;
 }
+
 .read-item:not(:last-of-type) {
   margin-bottom: 30rpx;
 }
@@ -21,6 +23,7 @@
   display: flex;
   align-items: center;
 }
+
 .head-portraits-date .head-portraits {
   display: block;
   width: 60rpx;
@@ -29,12 +32,13 @@
   font-size: inherit;
   margin-right: 1em;
 }
+
 .head-portraits-date .date {
   font-weight: 600;
   font-size: inherit;
 }
 
-.item-title {  
+.item-title {
   display: block;
   font-size: 32rpx;
   padding-left: 1em;
@@ -54,10 +58,10 @@
   margin-left: auto;
 }
 
-.item-intro {  
+.item-intro {
   display: block;
   font-size: inherit;
-  letter-spacing: .1em;
+  letter-spacing: 0.1em;
   padding-left: 1em;
   padding-right: 1em;
   margin-top: 1em;

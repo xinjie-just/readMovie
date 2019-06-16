@@ -3,7 +3,7 @@
 .movie-item-container {
   float: left;
   width: 29.33333333%;
-  margin: 20rpx 2%;
+  margin: 30rpx 2%;
 }
 
 .movie-item-img {

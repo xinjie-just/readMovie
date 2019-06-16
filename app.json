@@ -1,11 +1,14 @@
 {
   "pages": [
-    "pages/read/read",
     "pages/welcome/welcome",
+    "pages/read/read",
     "pages/read/read-details/read-details",
     "pages/movie/movie",
     "pages/movie/more-movie/more-movie",
     "pages/movie/movie-details/movie-details"
+  ],
+  "requiredBackgroundModes": [
+    "audio"
   ],
   "window": {
     "navigationBarBackgroundColor": "#019fe8"

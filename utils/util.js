@@ -26,11 +26,6 @@ function castsToString(casts) {
     for (var prop in casts) {
       castsArr.push(casts[prop]);
     }
-    // var castsNames = [], castsAvatars = [];
-    // for (var prop in casts) {
-    //   castsNames.push(casts[prop].name);
-    //   castsAvatars.push(casts[prop].avatars.large);
-    // }
   }
   return casts;
 }

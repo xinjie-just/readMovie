@@ -2,12 +2,13 @@
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 30rpx;
+  line-height: 30rpx;
 }
 
 .stars {
   display: flex;
   flex-direction: row;
-  height: 20rpx;
   margin-right: 24rpx;
 }
 
@@ -18,6 +19,6 @@
 }
 
 .star-score {
-  line-height: 20rpx;
   color: #1f3463;
+  font-size: 30rpx;
 }

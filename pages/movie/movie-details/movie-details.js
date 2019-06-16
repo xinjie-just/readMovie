@@ -1,7 +1,6 @@
 var app = getApp();
 var util = require("../../../utils/util.js");
 Page({
-
   data: {
     movie: {},
     baseUrl: app.globalData.doubanbase

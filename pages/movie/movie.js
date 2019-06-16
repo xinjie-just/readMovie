@@ -1,8 +1,6 @@
-// pages/movie/movie.js
 var stars = require("../../utils/util.js");
 var AppData = getApp(); // 获取小程序App实例
 Page({
-
   data: {
     baseUrl: AppData.globalData.doubanbase,
     inTheaters: {},

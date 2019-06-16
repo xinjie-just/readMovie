@@ -1,11 +1,13 @@
-/* pages/movie/movie.wxss */
 @import "movie-list/movie-list-template.wxss";
+
 .container {
   background-color: #f2f2f2;
 }
+
 .container-template:not(:last-of-type) {
   margin-bottom: 30rpx;
 }
+
 .search-container {
   display: flex;
   align-items: center;
@@ -14,13 +16,16 @@
   font-size: 16px;
   background-color: #efefef;
 }
+
 .search-container input {
   flex: 1;
   color: #a9a9a9;
 }
+
 .search-container .placeholder-style {
   color: #a9a9a9;
 }
+
 .search-container icon {
   display: block;
   width: 46px;

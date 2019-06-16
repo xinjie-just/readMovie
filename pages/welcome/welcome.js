@@ -1,17 +1,9 @@
 Page({
-
-  /**
-   * 页面的初始数据
-   */
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
 
   startMiniProgram: function(event) {
-    // wx.redirectTo({ // 页面重定向到指定页面
-    //   url: "/pages/read/read",
-    // })
-
     wx.switchTab({
       url: "/pages/read/read",
     })
@@ -20,9 +12,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    // console.log("welcome onLoad");
-    
+  onLoad: function(options) {    
     wx.getUserInfo({
       success: function (res) {
         var userInfo = res.userInfo
